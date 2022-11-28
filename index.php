@@ -49,6 +49,12 @@ $hotels = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>PHP Hotel</title>
+    <style>
+        h5 {
+            color: red;
+            margin-bottom: 1.5rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,32 +62,37 @@ $hotels = [
         <h1 class="text-center my-5 text-primary">Hotels</h1>
         <div class="row">
             <div class="col">
+                <h5>Nome Hotel</h5>
                 <?php foreach ($hotels as $hotel) : ?>
-                    <p><strong class="text-success">Nome Hotel: <br> </strong><?php echo $hotel['name'] ?></p>
+                    <p><?php echo $hotel['name'] ?></p>
                 <?php endforeach ?>
             </div>
             <div class="col">
+                <h5>Descrizione Hotel</h5>
                 <?php foreach ($hotels as $hotel) : ?>
-                    <p><strong class="text-success">Descrizione Hotel: <br> </strong><?php echo $hotel['description'] ?></p>
+                    <p><?php echo $hotel['description'] ?></p>
                 <?php endforeach ?>
             </div>
             <div class="col">
+                <h5>Parking:</h5>
                 <?php foreach ($hotels as $hotel) : ?>
-                    <p><strong class="text-success">Parking: <br> </strong><?php if ($hotel['parking']) {
-                                                                                echo 'Sì';
-                                                                            } else {
-                                                                                echo 'No';
-                                                                            }   ?></p>
+                    <p><?php if ($hotel['parking']) {
+                            echo 'Sì';
+                        } else {
+                            echo 'No';
+                        }   ?></p>
                 <?php endforeach ?>
             </div>
             <div class="col">
+                <h5>Voto</h5>
                 <?php foreach ($hotels as $hotel) : ?>
-                    <p><strong class="text-success">Voto: <br> </strong><?php echo $hotel['vote'] ?></p>
+                    <p><?php echo $hotel['vote'] ?></p>
                 <?php endforeach ?>
             </div>
             <div class="col">
+                <h5>Distanza Dal Centro</h5>
                 <?php foreach ($hotels as $hotel) : ?>
-                    <p><strong class="text-success">Distanza Dal Centro: <br> </strong><?php echo $hotel['distance_to_center'] ?></p>
+                    <p><?php echo $hotel['distance_to_center'] ?></p>
                 <?php endforeach ?>
             </div>
         </div>
