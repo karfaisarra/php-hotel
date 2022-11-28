@@ -53,12 +53,38 @@ $hotels = [
 
 <body>
     <div class="container my-5">
-        <h1 class="text-center">Hotels</h1>
-        <ul>
-            <?php foreach ($hotels as $hotel) : ?>
-                <li> <?php echo 'Nome Hotel: ' . $hotel['name'] . ' ' . '/ description: ' . $hotel['description'] . ' ' . '/ parking: ' . $hotel['parking'] . ' ' . 'voto: ' . $hotel['vote'] . ' ' . '/ distance_to_center: ' . $hotel['distance_to_center']  ?> </li>
-            <?php endforeach ?>
-        </ul>
+        <h1 class="text-center my-5 text-primary">Hotels</h1>
+        <div class="row">
+            <div class="col">
+                <?php foreach ($hotels as $hotel) : ?>
+                    <p><strong class="text-success">Nome Hotel: <br> </strong><?php echo $hotel['name'] ?></p>
+                <?php endforeach ?>
+            </div>
+            <div class="col">
+                <?php foreach ($hotels as $hotel) : ?>
+                    <p><strong class="text-success">Descrizione Hotel: <br> </strong><?php echo $hotel['description'] ?></p>
+                <?php endforeach ?>
+            </div>
+            <div class="col">
+                <?php foreach ($hotels as $hotel) : ?>
+                    <p><strong class="text-success">Parking: <br> </strong><?php if ($hotel['parking']) {
+                                                                                echo 'Sì';
+                                                                            } else {
+                                                                                echo 'No';
+                                                                            }   ?></p>
+                <?php endforeach ?>
+            </div>
+            <div class="col">
+                <?php foreach ($hotels as $hotel) : ?>
+                    <p><strong class="text-success">Voto: <br> </strong><?php echo $hotel['vote'] ?></p>
+                <?php endforeach ?>
+            </div>
+            <div class="col">
+                <?php foreach ($hotels as $hotel) : ?>
+                    <p><strong class="text-success">Distanza Dal Centro: <br> </strong><?php echo $hotel['distance_to_center'] ?></p>
+                <?php endforeach ?>
+            </div>
+        </div>
     </div>
 </body>
 
